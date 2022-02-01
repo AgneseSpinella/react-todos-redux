@@ -38,6 +38,24 @@ export default () => {
           aria-describedby="inputGroup-sizing-sm"
         />
       </InputGroup>
+
+      <h2>Done</h2>
+      <ListGroup as="ol" numbered>
+        {todos
+          .filter((todo) => todo.done === true)
+          .map((todo) => (
+            <Note key={todo.id} note={todo} />
+          ))}
+      </ListGroup>
+      <h2>Undone</h2>
+      <ListGroup as="ol" numbered>
+        {todos
+          .filter((todo) => todo.done === false)
+          .map((todo) => (
+            <Note key={todo.id} note={todo} />
+          ))}
+      </ListGroup>
     </div>
+    
   );
 };
