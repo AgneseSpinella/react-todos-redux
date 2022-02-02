@@ -22,6 +22,7 @@ export default () => {
   };
   return (
     <div>
+      <h1>All</h1>
       <ListGroup as="ol" numbered>
         {todos.map((todo) => (
           <Note key={todo.id} note={todo} />
@@ -50,12 +51,11 @@ export default () => {
       <h2>Undone</h2>
       <ListGroup as="ol" numbered>
         {todos
-          .filter((todo) => todo.done === false)
+          .filter((todo) => todo.done !== true)
           .map((todo) => (
             <Note key={todo.id} note={todo} />
           ))}
       </ListGroup>
     </div>
-    
   );
 };
